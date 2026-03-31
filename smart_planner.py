@@ -25,9 +25,14 @@ st.markdown("""
     }
 
     section[data-testid="stSidebar"] {
-        background: #ffffff;
-        border-right: 1px solid #e5e7eb;
-    }
+    background: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    color: #111827;
+}
+
+section[data-testid="stSidebar"] * {
+    color: #111827 !important;
+}
 
     .main-title {
         font-size: 40px;
@@ -326,8 +331,8 @@ elif menu == "Add Task":
                 difficulty=difficulty,
                 importance=importance
             )
-            st.success("Task added successfully.")
-            st.rerun()
+            st.session_state["task_added"] = True
+        
 
     st.markdown('</div>', unsafe_allow_html=True)
 # ---------- SMART PLANNER ----------
